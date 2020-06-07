@@ -1,0 +1,13 @@
+extends:
+  file: ../maven/pipeline.yaml
+pipelines:
+  pullRequest:
+    build:
+      steps:
+      - sh: mvn -Dgroups="unit" clean test
+        name: unit-tests
+  release:
+    build:
+      steps:
+      - sh: mvn -Dgroups="unit" clean test
+        name: unit-tests
