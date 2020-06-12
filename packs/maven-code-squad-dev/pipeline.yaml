@@ -11,3 +11,5 @@ pipelines:
       steps:
       - sh: mvn -Dgroups="unit" clean test
         name: unit-tests
+      - sh: mvn -Dgroups="integration" clean test
+          name: integration-tests
